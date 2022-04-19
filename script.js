@@ -8,16 +8,11 @@ for(let i = 0; i < sizeOfCanvas * sizeOfCanvas; ++i) {
     canvas.appendChild(pixel);
 }
 
-const pixels = document.querySelectorAll('.pixel');
-
-console.log(canvas.style);
-
 const canvasStyles = window.getComputedStyle(canvas);
-
-console.log(canvasStyles);
-
 const canvasWidth = canvas.clientWidth - (parseFloat(canvasStyles.paddingTop) + parseFloat(canvasStyles.paddingBottom));
 const canvasHeight = canvas.clientHeight - (parseFloat(canvasStyles.paddingLeft) + parseFloat(canvasStyles.paddingRight));
+
+const pixels = document.querySelectorAll('.pixel');
 
 Array.from(pixels).forEach((pixel) => {
     // pixel.style.width = `${+canvas.style['width'] / sizeOfCanvas}px`;
@@ -28,6 +23,10 @@ Array.from(pixels).forEach((pixel) => {
 
 Array.from(pixels).forEach((pixel) => {
     pixel.addEventListener('mousedown', (e) => {
+        console.log("gas");
         pixel.style['background-color'] = 'black';
+    });
+
+    pixel.addEventListener('mouseup mousedown', (e) => {
     });
 });
