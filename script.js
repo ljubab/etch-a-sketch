@@ -21,12 +21,10 @@ Array.from(pixels).forEach((pixel) => {
     pixel.style.height = `${canvasHeight / sizeOfCanvas}px`;
 });
 
+const currentColor = 'red';
+
 Array.from(pixels).forEach((pixel) => {
     pixel.addEventListener('mousedown', (e) => {
-        console.log("gas");
-        pixel.style['background-color'] = 'black';
-    });
-
-    pixel.addEventListener('mouseup mousedown', (e) => {
+        pixel.style['background-color'] = document.querySelector("#inputColorPicker").value;
     });
 });
