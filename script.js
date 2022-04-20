@@ -28,3 +28,11 @@ Array.from(pixels).forEach((pixel) => {
         pixel.style['background-color'] = document.querySelector("#inputColorPicker").value;
     });
 });
+
+function clearCanvas() {
+    Array.from(pixels).forEach((pixel) => {
+        pixel.style['background-color'] = `white`;
+    });
+}
+
+document.querySelector("#clear").addEventListener('click', clearCanvas);
